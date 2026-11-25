@@ -1,0 +1,70 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; font-family: 'Segoe UI', Arial, sans-serif;
+  background: #12141f; color: #e8eaf6;
+  display: flex; justify-content: center; align-items: center; padding: 16px;
+}
+.card {
+  width: 100%; max-width: 820px; background: #1c1f2e; border-radius: 16px;
+  padding: 24px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+h1 { margin: 0 0 4px; font-size: 28px; }
+.sub { margin: 0 0 20px; color: #9aa0c3; }
+
+/* join screen */
+#join { text-align: center; padding: 20px 0; }
+#join input {
+  padding: 12px 16px; font-size: 18px; border-radius: 8px; border: 2px solid #343958;
+  background: #12141f; color: #fff; width: 220px; text-align: center; outline: none;
+}
+#join input:focus { border-color: #6c7bff; }
+.btn {
+  padding: 12px 24px; font-size: 18px; border: 0; border-radius: 8px; cursor: pointer;
+  background: #6c7bff; color: #fff; margin-left: 8px; font-weight: 600;
+}
+.btn:hover { background: #5565f0; }
+.steps { text-align: left; max-width: 420px; margin: 24px auto 0; color: #9aa0c3; line-height: 1.7; }
+.steps b { color: #e8eaf6; }
+
+/* game screen */
+#gameScreen { display: none; }
+.layout { display: flex; gap: 20px; flex-wrap: wrap; }
+.arena-wrap { flex: 1 1 380px; }
+#status {
+  padding: 10px 14px; border-radius: 8px; margin-bottom: 12px; font-size: 15px;
+  background: #2a2e45; color: #ffd166;
+}
+#status.ok { color: #6ee7a8; }
+#arena {
+  position: relative; width: 100%; aspect-ratio: 1 / 1; border-radius: 12px;
+  background: radial-gradient(circle at center, #262a42, #171a2b);
+  border: 2px solid #343958; overflow: hidden;
+}
+#target {
+  position: absolute; width: 15%; height: 15%; border-radius: 50%; cursor: pointer;
+  background: radial-gradient(circle at 35% 35%, #ff8a8a, #e63946);
+  box-shadow: 0 0 20px rgba(230, 57, 70, 0.7);
+  animation: pop 0.2s ease-out;
+}
+#target:active { transform: scale(0.9); }
+@keyframes pop { from { transform: scale(0); } to { transform: scale(1); } }
+
+/* winner overlay */
+#overlay {
+  position: absolute; inset: 0; display: none; flex-direction: column;
+  justify-content: center; align-items: center; gap: 16px;
+  background: rgba(18, 20, 31, 0.88); text-align: center; padding: 16px;
+}
+#overlay .btn { margin-left: 0; }
+#winnerText { font-size: 28px; font-weight: 700; color: #ffd166; }
+
+.board { flex: 1 1 220px; }
+.board h3 { margin: 0 0 10px; }
+#scores { list-style: none; padding: 0; margin: 0; }
+#scores li {
+  display: flex; justify-content: space-between; padding: 10px 14px; margin-bottom: 8px;
+  background: #262a42; border-radius: 8px;
+}
+#scores li.me { border: 2px solid #6c7bff; }
+#scores li.first .name::before { content: '👑 '; }
+.score { font-weight: 700; color: #6ee7a8; }

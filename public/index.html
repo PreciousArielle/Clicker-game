@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Click Race</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <h1>Click Race</h1>
+    <p class="sub">First to 10 points wins. Open other tabs to play!</p>
+
+    <div id="join">
+      <input id="nameInput" maxlength="12" placeholder="Your name" autocomplete="off" />
+      <button class="btn" id="joinBtn">Join</button>
+      <div class="steps">
+        <b>How to play:</b><br />
+        1. Enter a name and join.<br />
+        2. Open this same page in a second tab or window.<br />
+        3. Join with a different name and put the windows side by side.<br />
+        4. Click the dot before the other player does. First to 10 point wins!
+      </div>
+    </div>
+
+    <div id="gameScreen">
+      <div class="layout">
+        <div class="arena-wrap">
+          <div id="status"></div>
+          <div id="arena">
+            <div id="target"></div>
+            <div id="overlay">
+              <div id="winnerText"></div>
+              <button class="btn" id="restartBtn">Play again</button>
+            </div>
+          </div>
+        </div>
+        <div class="board">
+          <h3>Scoreboard</h3>
+          <ul id="scores"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
